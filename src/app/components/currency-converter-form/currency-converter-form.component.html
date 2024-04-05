@@ -1,0 +1,29 @@
+<div class="currency-converter">
+  <form class="currency-converter__form" [formGroup]="form">
+    <div class="currency-converter__control">
+      <mat-form-field class="example-full-width">
+        <input formControlName="baseAmount" matInput type="number" min="0" appNumberFilter>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-select formControlName="baseCurrency">
+          @for (item of CURRENCIES; track item) {
+          <mat-option [value]="item.key">{{item.name}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="currency-converter__control">
+      <mat-form-field class="example-full-width">
+        <input formControlName="secondAmount" matInput type="number" min="0" appNumberFilter>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-select formControlName="secondCurrency">
+          @for (item of CURRENCIES; track item) {
+          <mat-option [value]="item.key">{{item.name}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </form>
+</div>
